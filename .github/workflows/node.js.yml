@@ -14,3 +14,8 @@ jobs:
         run: |
           echo Add other commands you want to run
           echo This runs in a shell
+      - name: Run a script
+        env:
+          TEST_ENV_SECRET: ${{ secrets.TEST_ENV_SECRET }}
+          TEST_ENV_VAR: ${{ vars.TEST_ENV_VAR }}
+        run: echo "The value of TEST_ENV_SECRET is $TEST_ENV_SECRET and value of TEST_ENV_VAR is $TEST_ENV_VAR"
